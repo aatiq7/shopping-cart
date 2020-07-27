@@ -14,6 +14,20 @@ document.getElementById('phone-decrease').addEventListener('click', function() {
     handleProductChange('phone', false);
 })
 
+document.getElementById('case-remove').addEventListener('click', function() {
+    productRemove('case');
+})
+
+document.getElementById('phone-remove').addEventListener('click', function() {
+    productRemove('phone');
+})
+
+function productRemove(product) {
+    document.getElementById(product + '-cart').style.display = 'none';
+    document.getElementById(product + '-count').value = 0;
+    calculateTotal();
+}
+
 
 function handleProductChange(product, isIncrease) {
     const productInput = document.getElementById(product + '-count');
